@@ -97,11 +97,12 @@ export default function App() {
 
       {/* Navigation - 반응형 */}
       <div className="absolute right-3 md:right-6 top-1/2 transform -translate-y-1/2 flex flex-col items-center gap-3 md:gap-4 z-20">
-        {/* Swipe Instruction - Vertical */}
-        <div className="absolute right-full top-1/2 -translate-y-1/2 mr-2 md:mr-4 pointer-events-none h-64 flex items-center justify-center">
-          <p className="text-[10px] md:text-xs opacity-70 whitespace-nowrap tracking-widest"
-            style={{ color: "#cbd5e1", writingMode: "vertical-rl", textOrientation: "mixed", transform: "rotate(180deg)" }}>
-            위아래로 스와이프해서 페이지를 이동해주세요
+        {/* Swipe Instruction - Horizontal next to dots */}
+        <div className="absolute right-full top-1/2 -translate-y-1/2 mr-4 md:mr-6 pointer-events-none flex items-center justify-center w-max">
+          <p className="text-[10px] md:text-xs opacity-70 leading-tight text-right"
+            style={{ color: "#cbd5e1" }}>
+            위아래로 스와이프해서<br />
+            페이지를 이동해주세요
           </p>
         </div>
 
