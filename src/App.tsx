@@ -100,10 +100,10 @@ export default function App() {
         {/* Swipe Instruction - Boxed next to dots */}
         <div className="absolute right-full top-1/2 -translate-y-1/2 mr-12 md:mr-16 pointer-events-none w-max" style={{ right: 'calc(100% + 20px)' }}>
           <div className="px-8 py-3 rounded-xl border backdrop-blur-sm"
-            style={{ backgroundColor: "rgba(15, 23, 42, 0.6)", borderColor: "rgba(34, 211, 238, 0.3)", minWidth: "400px", width: "400px" }}>
+            style={{ backgroundColor: "rgba(15, 23, 42, 0.6)", borderColor: "rgba(34, 211, 238, 0.3)", minWidth: "200px", width: "200px" }}>
             <p className="text-[10px] md:text-xs opacity-90 leading-relaxed text-center font-medium"
-              style={{ color: "#cbd5e1", whiteSpace: "nowrap" }}>
-              위아래로 스와이프해서 페이지를 이동해주세요
+              style={{ color: "#cbd5e1" }}>
+              위아래로 스와이프해서<br />페이지를 이동해주세요
             </p>
           </div>
         </div>
