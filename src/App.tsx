@@ -4,7 +4,7 @@ import { ChevronDown, ChevronUp, Heart, Lightbulb, Brain, Palette, Music, Shield
 import { ImageWithFallback } from './components/figma/ImageWithFallback';
 import attractionDataImage from 'figma:asset/17ca8ece44f536d43459cf6d99d460ad5cf03382.png';
 import perfumeAnimationGif from 'figma:asset/35d6af83563aecc387c93c42f529e2ee74f824c3.png';
-import perfumeBottleImage from 'figma:asset/90d745040abd19f97331312b839d2d46fbc46e8c.png';
+import perfumeBottleImage from './assets/perfume-bottle-new.png';
 import asterLogoImage from 'figma:asset/49cfaaaba870f96430af036f6c2b8cb2b4639530.png';
 
 const TOTAL_SCREENS = 6;
@@ -573,7 +573,7 @@ function Screen4() {
             <h1 className="text-2xl md:text-4xl mb-3 md:mb-5  " style={{ color: "#ffffff" }}>별빛의 순간을 완성하세요</h1>
 
             <p className=" text-sm md:text-lg mb-6 md:mb-8" style={{ color: "#cbd5e1" }}>
-              원액을 모두 넣었다면, 공병의 <strong className=" bg-slate-800/50 px-2 py-1 rounded border  " style={{ borderColor: "#22d3ee", color: "#22d3ee" }}>로고의 윗부분까지</strong> 향수 베이스로 가득 채워주세요.
+              원액을 모두 넣었다면, 공병의 <strong className=" bg-slate-800/50 px-2 py-1 rounded border  " style={{ borderColor: "#22d3ee", color: "#22d3ee" }}>로고의 아랫부분까지</strong> 향수 베이스로 가득 채워주세요.
             </p>
 
             <motion.div
