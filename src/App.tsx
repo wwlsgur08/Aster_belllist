@@ -9,73 +9,6 @@ import asterLogoImage from 'figma:asset/49cfaaaba870f96430af036f6c2b8cb2b4639530
 
 const TOTAL_SCREENS = 6;
 
-// 별자리 연결선 SVG 컴포넌트
-const ConstellationLines = () => (
-  <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 1000 800">
-    <defs>
-      <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#06b6d4" />
-        <stop offset="100%" stopColor="#67e8f9" />
-      </linearGradient>
-    </defs>
-    
-    {/* 별자리 연결선들 */}
-    <motion.path
-      d="M100,100 L200,150 L300,120 L400,180 L500,140"
-      stroke="url(#starGradient)"
-      strokeWidth="1"
-      fill="none"
-      initial={{ pathLength: 0, opacity: 0 }}
-      animate={{ pathLength: 1, opacity: 0.6 }}
-      transition={{ duration: 3, delay: 0.5 }}
-    />
-    <motion.path
-      d="M600,200 L700,250 L800,220 L900,280"
-      stroke="url(#starGradient)"
-      strokeWidth="1"
-      fill="none"
-      initial={{ pathLength: 0, opacity: 0 }}
-      animate={{ pathLength: 1, opacity: 0.6 }}
-      transition={{ duration: 3, delay: 1 }}
-    />
-    <motion.path
-      d="M150,400 L250,450 L350,420 L450,480 L550,440"
-      stroke="url(#starGradient)"
-      strokeWidth="1"
-      fill="none"
-      initial={{ pathLength: 0, opacity: 0 }}
-      animate={{ pathLength: 1, opacity: 0.6 }}
-      transition={{ duration: 3, delay: 1.5 }}
-    />
-    
-    {/* 별들 */}
-    {[
-      { x: 100, y: 100 }, { x: 200, y: 150 }, { x: 300, y: 120 }, { x: 400, y: 180 }, { x: 500, y: 140 },
-      { x: 600, y: 200 }, { x: 700, y: 250 }, { x: 800, y: 220 }, { x: 900, y: 280 },
-      { x: 150, y: 400 }, { x: 250, y: 450 }, { x: 350, y: 420 }, { x: 450, y: 480 }, { x: 550, y: 440 }
-    ].map((star, index) => (
-      <motion.circle
-        key={index}
-        cx={star.x}
-        cy={star.y}
-        r="2"
-        fill="url(#starGradient)"
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ 
-          scale: [0, 1.2, 1, 1.5, 1],
-          opacity: [0, 1, 0.7, 1, 0.8]
-        }}
-        transition={{ 
-          duration: 2, 
-          delay: 0.5 + index * 0.1,
-          repeat: Infinity,
-          repeatDelay: 3 + index * 0.2
-        }}
-      />
-    ))}
-  </svg>
-);
-
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -132,37 +65,15 @@ export default function App() {
   };
 
   return (
-    <div 
-      className="w-full h-screen overflow-hidden bg-gradient-to-b from-slate-900 via-blue-900 to-indigo-900 relative"
+    <div
+      className="w-full h-screen overflow-hidden relative"
+      style={{
+        background: 'linear-gradient(to bottom, #0f172a, #1e3a8a, #312e81)'
+      }}
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
     >
-      {/* 배경 별자리 */}
-      <ConstellationLines />
-      
-      {/* 배경 별들 */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {Array.from({ length: 50 }).map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-cyan-300 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              opacity: [0.3, 1, 0.3],
-              scale: [0.5, 1.2, 0.5]
-            }}
-            transition={{
-              duration: 2 + Math.random() * 3,
-              repeat: Infinity,
-              delay: Math.random() * 2
-            }}
-          />
-        ))}
-      </div>
 
       {/* Screen Content */}
       <motion.div
@@ -190,14 +101,13 @@ export default function App() {
         >
           <ChevronUp className="w-5 h-5 md:w-6 md:h-6 text-cyan-300" />
         </button>
-        
+
         <div className="flex flex-col gap-1.5 md:gap-2">
           {Array.from({ length: TOTAL_SCREENS }).map((_, index) => (
             <motion.div
               key={index}
-              className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full transition-all ${
-                index === currentScreen ? 'bg-cyan-400 shadow-lg shadow-cyan-400/50' : 'bg-slate-600'
-              }`}
+              className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full transition-all ${index === currentScreen ? 'bg-cyan-400 shadow-lg shadow-cyan-400/50' : 'bg-slate-600'
+                }`}
               animate={index === currentScreen ? {
                 boxShadow: ['0 0 5px #22d3ee', '0 0 15px #22d3ee', '0 0 5px #22d3ee']
               } : {}}
@@ -243,7 +153,7 @@ function Screen1({ onNext }: { onNext: () => void }) {
       {/* 플로팅 별들 - 반응형 */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          animate={{ 
+          animate={{
             y: [-20, -40, -20],
             x: [-10, 10, -10],
             rotate: [0, 360, 0]
@@ -254,7 +164,7 @@ function Screen1({ onNext }: { onNext: () => void }) {
           <Star className="w-6 h-6 md:w-10 md:h-10 text-cyan-300/60" />
         </motion.div>
         <motion.div
-          animate={{ 
+          animate={{
             y: [20, 0, 20],
             x: [10, -10, 10],
             rotate: [0, -360, 0]
@@ -265,7 +175,7 @@ function Screen1({ onNext }: { onNext: () => void }) {
           <Star className="w-5 h-5 md:w-8 md:h-8 text-teal-300/50" />
         </motion.div>
         <motion.div
-          animate={{ 
+          animate={{
             y: [0, -20, 0],
             scale: [1, 1.3, 1],
             rotate: [0, 180, 360]
@@ -298,7 +208,7 @@ function Screen1({ onNext }: { onNext: () => void }) {
             >
               <Sparkles className="w-12 h-12 md:w-20 md:h-20 text-cyan-300" />
             </motion.div>
-            
+
             {/* 주변 별들 - 반응형 */}
             <motion.div
               animate={{ rotate: 360, scale: [1, 1.2, 1] }}
@@ -324,7 +234,7 @@ function Screen1({ onNext }: { onNext: () => void }) {
           </div>
         </motion.div>
 
-        <motion.h1 
+        <motion.h1
           className="text-2xl md:text-5xl mb-4 md:mb-6 text-white bg-gradient-to-r from-cyan-300 via-teal-200 to-cyan-400 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -332,8 +242,8 @@ function Screen1({ onNext }: { onNext: () => void }) {
         >
           나만의 매력, 향으로 만들다
         </motion.h1>
-        
-        <motion.p 
+
+        <motion.p
           className="mb-6 md:mb-12 text-slate-300 text-base md:text-xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -397,9 +307,9 @@ function Screen2() {
         </motion.div>
 
         <h1 className="text-2xl md:text-4xl mb-3 md:mb-5 text-white">당신의 매력, 별자리가 되다</h1>
-        
+
         <p className="mb-6 md:mb-10 text-slate-300 text-sm md:text-lg">
-          당신의 스마트폰 결과 카드에 나온 <strong className="text-cyan-400 bg-slate-800/50 px-2 py-1 rounded border border-cyan-400/30">매력 점수</strong>를 확인하세요. 
+          당신의 스마트폰 결과 카드에 나온 <strong className="text-cyan-400 bg-slate-800/50 px-2 py-1 rounded border border-cyan-400/30">매력 점수</strong>를 확인하세요.
           <br />이 매력들이 당신만의 별자리를 만듭니다.
         </p>
 
@@ -426,7 +336,7 @@ function Screen2() {
             >
               <Sparkles className="w-5 h-5 md:w-8 md:h-8 text-teal-400/50" />
             </motion.div>
-            
+
             <h3 className="font-medium text-cyan-300 mb-3 md:mb-4 text-center text-base md:text-xl">매력 점수</h3>
             <div className="p-3 md:p-5 bg-gradient-to-br from-slate-800/60 to-blue-900/60 backdrop-blur-sm rounded-2xl border border-cyan-400/30 shadow-lg shadow-cyan-400/10">
               <ImageWithFallback
@@ -468,7 +378,7 @@ function Screen3() {
             </motion.div>
 
             <h1 className="text-2xl md:text-4xl mb-3 md:mb-5 text-white">매력 점수를 통해 향료를 채워주세요</h1>
-            
+
             <p className="mb-6 md:mb-8 text-slate-300 text-sm md:text-lg">
               선택한 매력들의 상위 카테고리에 해당하는 향 원료를 매력의 크기만큼 한 방울씩 넣어주세요.
               <br /><span className="text-cyan-400 font-medium bg-slate-800/50 px-2 py-1 rounded border border-cyan-400/30">(20방울 ≈ 1ml)</span>
@@ -561,7 +471,7 @@ function Screen3() {
               >
                 <Sparkles className="w-6 h-6 md:w-10 md:h-10 text-teal-400/50" />
               </motion.div>
-              
+
               <div className="relative bg-gradient-to-br from-slate-800/60 to-blue-900/60 backdrop-blur-sm rounded-2xl p-3 md:p-5 shadow-lg border border-cyan-400/30 shadow-cyan-400/10">
                 <ImageWithFallback
                   src={perfumeAnimationGif}
@@ -607,7 +517,7 @@ function Screen4() {
               >
                 <Sparkles className="w-6 h-6 md:w-10 md:h-10 text-teal-400/50" />
               </motion.div>
-              
+
               <div className="relative bg-gradient-to-br from-slate-800/60 to-blue-900/60 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-cyan-400/30 shadow-lg shadow-cyan-400/10">
                 <ImageWithFallback
                   src={perfumeBottleImage}
@@ -638,12 +548,12 @@ function Screen4() {
             </motion.div>
 
             <h1 className="text-2xl md:text-4xl mb-3 md:mb-5 text-white">별빛의 순간을 완성하세요</h1>
-            
+
             <p className="text-slate-300 text-sm md:text-lg mb-6 md:mb-8">
               원액을 모두 넣었다면, 공병의 <strong className="text-cyan-400 bg-slate-800/50 px-2 py-1 rounded border border-cyan-400/30">로고의 윗부분까지</strong> 향수 베이스로 가득 채워주세요.
             </p>
 
-            <motion.div 
+            <motion.div
               whileHover={{ scale: 1.02 }}
               className="bg-gradient-to-br from-slate-800/60 to-blue-900/60 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-cyan-400/30 shadow-lg shadow-cyan-400/10"
             >
@@ -746,7 +656,7 @@ function Screen5() {
             <div className="text-left">
               <h3 className="font-medium text-cyan-300 mb-1 md:mb-2 text-sm md:text-lg">⭐ TIP</h3>
               <p className="text-slate-300 text-xs md:text-base">
-                최고의 향을 위해, 서늘하고 어두운 곳에서 2주간 숙성하면 
+                최고의 향을 위해, 서늘하고 어두운 곳에서 2주간 숙성하면
                 알코올 향이 사라지고 향이 더욱 깊어집니다.
               </p>
             </div>
@@ -774,7 +684,7 @@ function Screen6() {
   };
 
   return (
-    <div 
+    <div
       className="relative w-full h-full flex items-center justify-center cursor-pointer"
       onClick={createSparkle}
     >
@@ -783,10 +693,10 @@ function Screen6() {
         <motion.div
           key={sparkle.id}
           initial={{ scale: 0, opacity: 1, x: sparkle.x, y: sparkle.y }}
-          animate={{ 
-            scale: [0, 1.5, 0], 
+          animate={{
+            scale: [0, 1.5, 0],
             opacity: [1, 1, 0],
-            y: sparkle.y - 50 
+            y: sparkle.y - 50
           }}
           transition={{ duration: 1.5 }}
           className="absolute pointer-events-none z-30"
@@ -833,7 +743,7 @@ function Screen6() {
           </motion.div>
         </motion.div>
 
-        <motion.h1 
+        <motion.h1
           className="text-xl md:text-4xl mb-4 md:mb-6 text-white bg-gradient-to-r from-cyan-300 via-teal-200 to-cyan-400 bg-clip-text text-transparent px-2"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -841,8 +751,8 @@ function Screen6() {
         >
           특별한 당신의 향이 완성되었습니다
         </motion.h1>
-        
-        <motion.p 
+
+        <motion.p
           className="mb-8 md:mb-12 text-slate-300 text-sm md:text-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
