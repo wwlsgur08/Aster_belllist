@@ -97,6 +97,14 @@ export default function App() {
 
       {/* Navigation - 반응형 */}
       <div className="absolute right-3 md:right-6 top-1/2 transform -translate-y-1/2 flex flex-col items-center gap-3 md:gap-4 z-20">
+        {/* Swipe Instruction - Vertical */}
+        <div className="absolute right-full top-1/2 -translate-y-1/2 mr-2 md:mr-4 pointer-events-none h-64 flex items-center justify-center">
+          <p className="text-[10px] md:text-xs opacity-70 whitespace-nowrap tracking-widest"
+            style={{ color: "#cbd5e1", writingMode: "vertical-rl", textOrientation: "mixed", transform: "rotate(180deg)" }}>
+            위아래로 스와이프해서 페이지를 이동해주세요
+          </p>
+        </div>
+
         <button
           onClick={prevScreen}
           disabled={currentScreen === 0 || isAnimating}
@@ -147,12 +155,6 @@ export default function App() {
             transition={{ duration: 2, repeat: Infinity }}
           />
         </motion.div>
-      </div>
-      {/* Swipe Instruction Footer */}
-      <div className="absolute bottom-2 md:bottom-4 left-0 right-0 text-center z-20 pointer-events-none">
-        <p className="text-[10px] md:text-xs opacity-70" style={{ color: "#cbd5e1" }}>
-          위아래로 스와이프해서 페이지를 이동해주세요
-        </p>
       </div>
     </div>
   );
