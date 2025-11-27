@@ -766,7 +766,7 @@ function Screen6() {
         </motion.div>
 
         <motion.h1
-          className="text-xl md:text-4xl mb-4 md:mb-6  px-2 bg-clip-text text-transparent" style={{ color: "#ffffff", borderColor: "data-border-placeholder", background: "linear-gradient(to right, #67e8f9, #99f6e4, #22d3ee)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
+          className="text-xl md:text-4xl mb-4 md:mb-6  px-2 bg-clip-text text-transparent" style={{ color: "#ffffff", borderColor: "data-border-placeholder", background: "linear-gradient(to right, #67e8f9, #99f6e4, #22d3ee)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.7, duration: 0.8 }}
