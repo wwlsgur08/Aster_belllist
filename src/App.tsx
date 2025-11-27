@@ -316,7 +316,7 @@ function Screen2() {
         <h1 className="text-2xl md:text-4xl mb-3 md:mb-5  " style={{ color: "#ffffff" }}>당신의 매력, 별자리가 되다</h1>
 
         <p className="mb-6 md:mb-10 text-sm md:text-lg" style={{ color: "#cbd5e1" }}>
-          당신의 스마트폰 결과 카드에 나온 <strong className="px-2 py-1 rounded border" style={{ backgroundColor: "rgba(30, 41, 59, 0.5)", borderColor: "#22d3ee", color: "#22d3ee" }}>매력 점수</strong>를 확인하세요.
+          당신의 매력 결과 카드에 나온 <strong className="px-2 py-1 rounded border" style={{ backgroundColor: "rgba(30, 41, 59, 0.5)", borderColor: "#22d3ee", color: "#22d3ee" }}>매력 점수</strong>를 확인하세요.
           <br />이 매력들이 당신만의 별자리를 만듭니다.
         </p>
 
@@ -344,7 +344,7 @@ function Screen2() {
               <Sparkles className="w-5 h-5 md:w-8 md:h-8  " style={{ color: "rgba(45, 212, 191, 0.5)" }} />
             </motion.div>
 
-            <h3 className="font-medium  mb-3 md:mb-4 text-center text-base md:text-xl" style={{ color: "#67e8f9" }}>매력 점수</h3>
+            <h3 className="font-medium  mb-3 md:mb-4 text-center text-base md:text-xl" style={{ color: "#67e8f9" }}>매력 점수 예시 (본인의 카드를 확인해보세요.)</h3>
             <div className="p-3 md:p-5 rounded-2xl border  shadow-lg shadow-cyan-400" style={{ borderColor: "#22d3ee", background: "linear-gradient(to bottom right, rgba(30, 41, 59, 0.6), rgba(30, 58, 138, 0.6))" }}>
               <ImageWithFallback
                 src={attractionDataImage}
