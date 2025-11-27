@@ -582,7 +582,7 @@ function Screen4() {
             >
               <div className="flex items-start gap-2 md:gap-3">
                 <div className="w-7 h-7 md:w-10 md:h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ background: "linear-gradient(to right, #22d3ee, #14b8a6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-                  <Sparkles className="w-3.5 h-3.5 md:w-6 md:h-6  " style={{ color: "#312e81" }} />
+                  <Sparkles className="w-3.5 h-3.5 md:w-6 md:h-6  " style={{ color: "#22d3ee" }} />
                 </div>
                 <div>
                   <h3 className="font-medium  mb-1 md:mb-2 text-sm md:text-lg" style={{ color: "#67e8f9" }}>베이스 채우기 팁</h3>
@@ -675,7 +675,7 @@ function Screen5() {
         >
           <div className="flex items-start gap-2 md:gap-3">
             <div className="w-7 h-7 md:w-10 md:h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ background: "linear-gradient(to right, #22d3ee, #14b8a6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
-              <Lightbulb className="w-3.5 h-3.5 md:w-6 md:h-6  " style={{ color: "#312e81" }} />
+              <Lightbulb className="w-3.5 h-3.5 md:w-6 md:h-6  " style={{ color: "#22d3ee" }} />
             </div>
             <div className="text-left">
               <h3 className="font-medium  mb-1 md:mb-2 text-sm md:text-lg" style={{ color: "#67e8f9" }}>⭐ TIP</h3>
