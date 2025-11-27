@@ -148,6 +148,12 @@ export default function App() {
           />
         </motion.div>
       </div>
+      {/* Swipe Instruction Footer */}
+      <div className="absolute bottom-2 md:bottom-4 left-0 right-0 text-center z-20 pointer-events-none">
+        <p className="text-[10px] md:text-xs opacity-70" style={{ color: "#cbd5e1" }}>
+          위아래로 스와이프해서 페이지를 이동해주세요
+        </p>
+      </div>
     </div>
   );
 }
