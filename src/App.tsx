@@ -109,8 +109,11 @@ export default function App() {
           {Array.from({ length: TOTAL_SCREENS }).map((_, index) => (
             <motion.div
               key={index}
-              className={`w-1.5 h-1.5 md:w-2 md:h-2 rounded-full transition-all ${index === currentScreen ? 'bg-cyan-400 shadow-lg shadow-cyan-400' : 'bg-slate-600'
-                }`}
+              className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full transition-all"
+              style={{
+                backgroundColor: index === currentScreen ? '#22d3ee' : '#475569',
+                boxShadow: index === currentScreen ? '0 0 5px #22d3ee' : 'none'
+              }}
               animate={index === currentScreen ? {
                 boxShadow: ['0 0 5px #22d3ee', '0 0 15px #22d3ee', '0 0 5px #22d3ee']
               } : {}}
@@ -303,16 +306,17 @@ function Screen2() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="inline-flex items-center gap-2 bg-slate-800/60  px-3 md:px-5 py-1.5 md:py-2 rounded-full mb-4 md:mb-6 border  text-sm md:text-base" style={{ borderColor: "#22d3ee", color: "#67e8f9" }}
+          className="inline-flex items-center gap-2 px-3 md:px-5 py-1.5 md:py-2 rounded-full mb-4 md:mb-6 border text-sm md:text-base"
+          style={{ backgroundColor: "rgba(30, 41, 59, 0.6)", borderColor: "#22d3ee", color: "#67e8f9" }}
         >
-          <span className="w-5 h-5 md:w-8 md:h-8  rounded-full flex items-center justify-center text-xs md:text-sm" style={{ color: "#312e81", borderColor: "data-border-placeholder", background: "linear-gradient(to right, #22d3ee, #14b8a6)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>1</span>
+          <span className="w-5 h-5 md:w-8 md:h-8 rounded-full flex items-center justify-center text-xs md:text-sm" style={{ color: "#312e81", background: "linear-gradient(to right, #22d3ee, #14b8a6)" }}>1</span>
           <span>나만의 별자리 확인하기</span>
         </motion.div>
 
         <h1 className="text-2xl md:text-4xl mb-3 md:mb-5  " style={{ color: "#ffffff" }}>당신의 매력, 별자리가 되다</h1>
 
-        <p className="mb-6 md:mb-10  text-sm md:text-lg" style={{ color: "#cbd5e1" }}>
-          당신의 스마트폰 결과 카드에 나온 <strong className=" bg-slate-800/50 px-2 py-1 rounded border  " style={{ borderColor: "#22d3ee", color: "#22d3ee" }}>매력 점수</strong>를 확인하세요.
+        <p className="mb-6 md:mb-10 text-sm md:text-lg" style={{ color: "#cbd5e1" }}>
+          당신의 스마트폰 결과 카드에 나온 <strong className="px-2 py-1 rounded border" style={{ backgroundColor: "rgba(30, 41, 59, 0.5)", borderColor: "#22d3ee", color: "#22d3ee" }}>매력 점수</strong>를 확인하세요.
           <br />이 매력들이 당신만의 별자리를 만듭니다.
         </p>
 
@@ -394,18 +398,19 @@ function Screen3() {
                 {/* 도덕성 및 양심 카테고리 */}
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="bg-slate-700/50 rounded-xl p-3 md:p-5 border border-blue-400/30 shadow-sm"
+                  className="rounded-xl p-3 md:p-5 border shadow-sm"
+                  style={{ backgroundColor: "rgba(51, 65, 85, 0.5)", borderColor: "rgba(96, 165, 250, 0.3)" }}
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2 md:gap-3">
-                      <div className="w-7 h-7 md:w-10 md:h-10 bg-blue-500/30 rounded-lg flex items-center justify-center border border-blue-400/50">
-                        <Shield className="w-4 h-4 md:w-6 md:h-6 text-blue-300" />
+                      <div className="w-7 h-7 md:w-10 md:h-10 rounded-lg flex items-center justify-center border" style={{ backgroundColor: "rgba(59, 130, 246, 0.3)", borderColor: "rgba(96, 165, 250, 0.5)" }}>
+                        <Shield className="w-4 h-4 md:w-6 md:h-6" style={{ color: "#93c5fd" }} />
                       </div>
-                      <span className="font-medium text-slate-200 text-sm md:text-base">도덕성 및 양심</span>
+                      <span className="font-medium text-sm md:text-base" style={{ color: "#e2e8f0" }}>도덕성 및 양심</span>
                     </div>
-                    <span className=" bg-slate-800/80 px-2 md:px-3 py-0.5 md:py-1 rounded-full border  text-sm md:text-base" style={{ borderColor: "#22d3ee", color: "#22d3ee" }}>19방울</span>
+                    <span className="px-2 md:px-3 py-0.5 md:py-1 rounded-full border text-sm md:text-base" style={{ backgroundColor: "rgba(30, 41, 59, 0.8)", borderColor: "#22d3ee", color: "#22d3ee" }}>19방울</span>
                   </div>
-                  <div className="text-xs md:text-sm  pl-9 md:pl-13" style={{ color: "#94a3b8" }}>
+                  <div className="text-xs md:text-sm pl-9 md:pl-13" style={{ color: "#94a3b8" }}>
                     양심 6+ 정직함 5+ 원칙 준수 3+ 진정성 3+ 약자보호 2
                   </div>
                 </motion.div>
@@ -413,18 +418,19 @@ function Screen3() {
                 {/* 지적호기심 및 개방성 카테고리 */}
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="bg-slate-700/50 rounded-xl p-3 md:p-5 border  /30 shadow-sm" style={{ borderColor: "#2dd4bf" }}
+                  className="rounded-xl p-3 md:p-5 border shadow-sm"
+                  style={{ backgroundColor: "rgba(51, 65, 85, 0.5)", borderColor: "rgba(45, 212, 191, 0.3)" }}
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2 md:gap-3">
-                      <div className="w-7 h-7 md:w-10 md:h-10 bg-teal-500/30 rounded-lg flex items-center justify-center border  /50" style={{ borderColor: "#2dd4bf" }}>
-                        <Lightbulb className="w-4 h-4 md:w-6 md:h-6  " style={{ color: "#5eead4" }} />
+                      <div className="w-7 h-7 md:w-10 md:h-10 rounded-lg flex items-center justify-center border" style={{ backgroundColor: "rgba(20, 184, 166, 0.3)", borderColor: "rgba(45, 212, 191, 0.5)" }}>
+                        <Lightbulb className="w-4 h-4 md:w-6 md:h-6" style={{ color: "#5eead4" }} />
                       </div>
-                      <span className="font-medium text-slate-200 text-sm md:text-base">지적호기심 및 개방성</span>
+                      <span className="font-medium text-sm md:text-base" style={{ color: "#e2e8f0" }}>지적호기심 및 개방성</span>
                     </div>
-                    <span className=" bg-slate-800/80 px-2 md:px-3 py-0.5 md:py-1 rounded-full border  text-sm md:text-base" style={{ borderColor: "#22d3ee", color: "#22d3ee" }}>7방울</span>
+                    <span className="px-2 md:px-3 py-0.5 md:py-1 rounded-full border text-sm md:text-base" style={{ backgroundColor: "rgba(30, 41, 59, 0.8)", borderColor: "#22d3ee", color: "#22d3ee" }}>7방울</span>
                   </div>
-                  <div className="text-xs md:text-sm  pl-9 md:pl-13" style={{ color: "#94a3b8" }}>
+                  <div className="text-xs md:text-sm pl-9 md:pl-13" style={{ color: "#94a3b8" }}>
                     창의성 5+ 모험심 2
                   </div>
                 </motion.div>
@@ -432,18 +438,19 @@ function Screen3() {
                 {/* 정서적 안정 및 자기 인식 카테고리 */}
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="bg-slate-700/50 rounded-xl p-3 md:p-5 border border-emerald-400/30 shadow-sm"
+                  className="rounded-xl p-3 md:p-5 border shadow-sm"
+                  style={{ backgroundColor: "rgba(51, 65, 85, 0.5)", borderColor: "rgba(52, 211, 153, 0.3)" }}
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2 md:gap-3">
-                      <div className="w-7 h-7 md:w-10 md:h-10 bg-emerald-500/30 rounded-lg flex items-center justify-center border border-emerald-400/50">
-                        <Heart className="w-4 h-4 md:w-6 md:h-6 text-emerald-300" />
+                      <div className="w-7 h-7 md:w-10 md:h-10 rounded-lg flex items-center justify-center border" style={{ backgroundColor: "rgba(16, 185, 129, 0.3)", borderColor: "rgba(52, 211, 153, 0.5)" }}>
+                        <Heart className="w-4 h-4 md:w-6 md:h-6" style={{ color: "#6ee7b7" }} />
                       </div>
-                      <span className="font-medium text-slate-200 text-sm md:text-base">정서적 안정 및 자기 인식</span>
+                      <span className="font-medium text-sm md:text-base" style={{ color: "#e2e8f0" }}>정서적 안정 및 자기 인식</span>
                     </div>
-                    <span className=" bg-slate-800/80 px-2 md:px-3 py-0.5 md:py-1 rounded-full border  text-sm md:text-base" style={{ borderColor: "#22d3ee", color: "#22d3ee" }}>4방울</span>
+                    <span className="px-2 md:px-3 py-0.5 md:py-1 rounded-full border text-sm md:text-base" style={{ backgroundColor: "rgba(30, 41, 59, 0.8)", borderColor: "#22d3ee", color: "#22d3ee" }}>4방울</span>
                   </div>
-                  <div className="text-xs md:text-sm  pl-9 md:pl-13" style={{ color: "#94a3b8" }}>
+                  <div className="text-xs md:text-sm pl-9 md:pl-13" style={{ color: "#94a3b8" }}>
                     현실 감각 4
                   </div>
                 </motion.div>
