@@ -133,7 +133,10 @@ export default function App() {
 
   return (
     <div
-      className="w-full h-screen overflow-hidden bg-indigo-900 relative"
+      className="w-full h-screen overflow-hidden relative"
+      style={{
+        background: 'linear-gradient(to bottom, #0f172a, #1e3a8a, #312e81)'
+      }}
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
@@ -186,7 +189,7 @@ export default function App() {
         <button
           onClick={prevScreen}
           disabled={currentScreen === 0 || isAnimating}
-          className="p-2 md:p-3 rounded-full disabled:opacity-50 disabled:cursor-not-allowed hover:transition-all border border-cyan-400" style={{backgroundColor: "#1e3a8a"}} style={{backgroundColor: "#1e40af"}}
+          className="p-2 md:p-3 rounded-full disabled:opacity-50 disabled:cursor-not-allowed hover:transition-all border border-cyan-400" style={{ backgroundColor: "#1e3a8a" }} style={{ backgroundColor: "#1e40af" }}
         >
           <ChevronUp className="w-5 h-5 md:w-6 md:h-6 text-cyan-300" />
         </button>
@@ -208,14 +211,14 @@ export default function App() {
         <button
           onClick={nextScreen}
           disabled={currentScreen === TOTAL_SCREENS - 1 || isAnimating}
-          className="p-2 md:p-3 rounded-full disabled:opacity-50 disabled:cursor-not-allowed hover:transition-all border border-cyan-400" style={{backgroundColor: "#1e3a8a"}} style={{backgroundColor: "#1e40af"}}
+          className="p-2 md:p-3 rounded-full disabled:opacity-50 disabled:cursor-not-allowed hover:transition-all border border-cyan-400" style={{ backgroundColor: "#1e3a8a" }} style={{ backgroundColor: "#1e40af" }}
         >
           <ChevronDown className="w-5 h-5 md:w-6 md:h-6 text-cyan-300" />
         </button>
       </div>
 
       {/* Progress bar - 별자리 스타일 */}
-      <div className="absolute top-0 left-0 right-0 h-1 z-20" style={{backgroundColor: "#1e293b"}}>
+      <div className="absolute top-0 left-0 right-0 h-1 z-20" style={{ backgroundColor: "#1e293b" }}>
         <motion.div
           className="h-full bg-cyan-500 relative"
           initial={{ width: 0 }}
@@ -290,7 +293,7 @@ function Screen1({ onNext }: { onNext: () => void }) {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="mb-6 md:mb-10"
         >
-          <div className="w-28 h-28 md:w-48 md:h-48 mx-auto rounded-full flex items-center justify-center mb-4 md:mb-6 relative shadow-2xl border-2 md:border-4 border-cyan-400" style={{backgroundColor: "#1e40af"}}>
+          <div className="w-28 h-28 md:w-48 md:h-48 mx-auto rounded-full flex items-center justify-center mb-4 md:mb-6 relative shadow-2xl border-2 md:border-4 border-cyan-400" style={{ backgroundColor: "#1e40af" }}>
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
@@ -349,7 +352,7 @@ function Screen1({ onNext }: { onNext: () => void }) {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={onNext}
-          className="hover:from-cyan-300 hover:to-teal-400 text-indigo-900 px-8 md:px-12 py-3 md:py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-cyan-400 border border-cyan-300 text-base md:text-lg" style={{backgroundColor: "#14b8a6"}}
+          className="hover:from-cyan-300 hover:to-teal-400 text-indigo-900 px-8 md:px-12 py-3 md:py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-cyan-400 border border-cyan-300 text-base md:text-lg" style={{ backgroundColor: "#14b8a6" }}
         >
           별자리 여행 시작하기
         </motion.button>
@@ -389,16 +392,16 @@ function Screen2() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="inline-flex items-center gap-2 text-cyan-300 px-3 md:px-5 py-1.5 md:py-2 rounded-full mb-4 md:mb-6 border border-cyan-400 text-sm md:text-base" style={{backgroundColor: "#1e293b"}}
+          className="inline-flex items-center gap-2 text-cyan-300 px-3 md:px-5 py-1.5 md:py-2 rounded-full mb-4 md:mb-6 border border-cyan-400 text-sm md:text-base" style={{ backgroundColor: "#1e293b" }}
         >
-          <span className="w-5 h-5 md:w-8 md:h-8 text-indigo-900 rounded-full flex items-center justify-center text-xs md:text-sm" style={{backgroundColor: "#14b8a6"}}>1</span>
+          <span className="w-5 h-5 md:w-8 md:h-8 text-indigo-900 rounded-full flex items-center justify-center text-xs md:text-sm" style={{ backgroundColor: "#14b8a6" }}>1</span>
           <span>나만의 별자리 확인하기</span>
         </motion.div>
 
         <h1 className="text-2xl md:text-4xl mb-3 md:mb-5 text-white">당신의 매력, 별자리가 되다</h1>
 
         <p className="mb-6 md:mb-10 text-slate-300 text-sm md:text-lg">
-          당신의 스마트폰 결과 카드에 나온 <strong className="text-cyan-400 px-2 py-1 rounded border border-cyan-400" style={{backgroundColor: "#1e293b"}}>매력 점수</strong>를 확인하세요.
+          당신의 스마트폰 결과 카드에 나온 <strong className="text-cyan-400 px-2 py-1 rounded border border-cyan-400" style={{ backgroundColor: "#1e293b" }}>매력 점수</strong>를 확인하세요.
           <br />이 매력들이 당신만의 별자리를 만듭니다.
         </p>
 
@@ -427,7 +430,7 @@ function Screen2() {
             </motion.div>
 
             <h3 className="font-medium text-cyan-300 mb-3 md:mb-4 text-center text-base md:text-xl">매력 점수</h3>
-            <div className="p-3 md:p-5 rounded-2xl border border-cyan-400 shadow-lg shadow-cyan-400" style={{backgroundColor: "#1e3a8a"}}>
+            <div className="p-3 md:p-5 rounded-2xl border border-cyan-400 shadow-lg shadow-cyan-400" style={{ backgroundColor: "#1e3a8a" }}>
               <ImageWithFallback
                 src={attractionDataImage}
                 alt="매력 점수 데이터"
@@ -460,9 +463,9 @@ function Screen3() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center gap-2 text-cyan-300 px-3 md:px-5 py-1.5 md:py-2 rounded-full mb-4 md:mb-6 border border-cyan-400 text-sm md:text-base" style={{backgroundColor: "#1e293b"}}
+              className="inline-flex items-center gap-2 text-cyan-300 px-3 md:px-5 py-1.5 md:py-2 rounded-full mb-4 md:mb-6 border border-cyan-400 text-sm md:text-base" style={{ backgroundColor: "#1e293b" }}
             >
-              <span className="w-5 h-5 md:w-8 md:h-8 text-indigo-900 rounded-full flex items-center justify-center text-xs md:text-sm" style={{backgroundColor: "#14b8a6"}}>2</span>
+              <span className="w-5 h-5 md:w-8 md:h-8 text-indigo-900 rounded-full flex items-center justify-center text-xs md:text-sm" style={{ backgroundColor: "#14b8a6" }}>2</span>
               <span>'별빛'으로 원액 조합하기</span>
             </motion.div>
 
@@ -470,26 +473,26 @@ function Screen3() {
 
             <p className="mb-6 md:mb-8 text-slate-300 text-sm md:text-lg">
               선택한 매력들의 상위 카테고리에 해당하는 향 원료를 매력의 크기만큼 한 방울씩 넣어주세요.
-              <br /><span className="text-cyan-400 font-medium px-2 py-1 rounded border border-cyan-400" style={{backgroundColor: "#1e293b"}}>(20방울 ≈ 1ml)</span>
+              <br /><span className="text-cyan-400 font-medium px-2 py-1 rounded border border-cyan-400" style={{ backgroundColor: "#1e293b" }}>(20방울 ≈ 1ml)</span>
             </p>
 
             {/* Recipe example - 반응형 */}
-            <div className="rounded-2xl p-4 md:p-6 border border-cyan-400 shadow-lg shadow-cyan-400" style={{backgroundColor: "#1e3a8a"}}>
+            <div className="rounded-2xl p-4 md:p-6 border border-cyan-400 shadow-lg shadow-cyan-400" style={{ backgroundColor: "#1e3a8a" }}>
               <h3 className="mb-3 md:mb-5 text-cyan-300 text-base md:text-xl">별자리 레시피:</h3>
               <div className="space-y-3 md:space-y-4">
                 {/* 도덕성 및 양심 카테고리 */}
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="rounded-xl p-3 md:p-5 border border-blue-400 shadow-sm" style={{backgroundColor: "#334155"}}
+                  className="rounded-xl p-3 md:p-5 border border-blue-400 shadow-sm" style={{ backgroundColor: "#334155" }}
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2 md:gap-3">
-                      <div className="w-7 h-7 md:w-10 md:h-10 rounded-lg flex items-center justify-center border border-blue-400" style={{backgroundColor: "#3b82f6"}}>
+                      <div className="w-7 h-7 md:w-10 md:h-10 rounded-lg flex items-center justify-center border border-blue-400" style={{ backgroundColor: "#3b82f6" }}>
                         <Shield className="w-4 h-4 md:w-6 md:h-6 text-blue-300" />
                       </div>
                       <span className="font-medium text-slate-200 text-sm md:text-base">도덕성 및 양심</span>
                     </div>
-                    <span className="text-cyan-400 px-2 md:px-3 py-0.5 md:py-1 rounded-full border border-cyan-400 text-sm md:text-base" style={{backgroundColor: "#1e293b"}}>19방울</span>
+                    <span className="text-cyan-400 px-2 md:px-3 py-0.5 md:py-1 rounded-full border border-cyan-400 text-sm md:text-base" style={{ backgroundColor: "#1e293b" }}>19방울</span>
                   </div>
                   <div className="text-xs md:text-sm text-slate-400 pl-9 md:pl-13">
                     양심 6+ 정직함 5+ 원칙 준수 3+ 진정성 3+ 약자보호 2
@@ -499,16 +502,16 @@ function Screen3() {
                 {/* 지적호기심 및 개방성 카테고리 */}
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="rounded-xl p-3 md:p-5 border border-teal-400 shadow-sm" style={{backgroundColor: "#334155"}}
+                  className="rounded-xl p-3 md:p-5 border border-teal-400 shadow-sm" style={{ backgroundColor: "#334155" }}
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2 md:gap-3">
-                      <div className="w-7 h-7 md:w-10 md:h-10 rounded-lg flex items-center justify-center border border-teal-400" style={{backgroundColor: "#14b8a6"}}>
+                      <div className="w-7 h-7 md:w-10 md:h-10 rounded-lg flex items-center justify-center border border-teal-400" style={{ backgroundColor: "#14b8a6" }}>
                         <Lightbulb className="w-4 h-4 md:w-6 md:h-6 text-teal-300" />
                       </div>
                       <span className="font-medium text-slate-200 text-sm md:text-base">지적호기심 및 개방성</span>
                     </div>
-                    <span className="text-cyan-400 px-2 md:px-3 py-0.5 md:py-1 rounded-full border border-cyan-400 text-sm md:text-base" style={{backgroundColor: "#1e293b"}}>7방울</span>
+                    <span className="text-cyan-400 px-2 md:px-3 py-0.5 md:py-1 rounded-full border border-cyan-400 text-sm md:text-base" style={{ backgroundColor: "#1e293b" }}>7방울</span>
                   </div>
                   <div className="text-xs md:text-sm text-slate-400 pl-9 md:pl-13">
                     창의성 5+ 모험심 2
@@ -518,16 +521,16 @@ function Screen3() {
                 {/* 정서적 안정 및 자기 인식 카테고리 */}
                 <motion.div
                   whileHover={{ scale: 1.02 }}
-                  className="rounded-xl p-3 md:p-5 border border-emerald-400 shadow-sm" style={{backgroundColor: "#334155"}}
+                  className="rounded-xl p-3 md:p-5 border border-emerald-400 shadow-sm" style={{ backgroundColor: "#334155" }}
                 >
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2 md:gap-3">
-                      <div className="w-7 h-7 md:w-10 md:h-10 rounded-lg flex items-center justify-center border border-emerald-400" style={{backgroundColor: "#10b981"}}>
+                      <div className="w-7 h-7 md:w-10 md:h-10 rounded-lg flex items-center justify-center border border-emerald-400" style={{ backgroundColor: "#10b981" }}>
                         <Heart className="w-4 h-4 md:w-6 md:h-6 text-emerald-300" />
                       </div>
                       <span className="font-medium text-slate-200 text-sm md:text-base">정서적 안정 및 자기 인식</span>
                     </div>
-                    <span className="text-cyan-400 px-2 md:px-3 py-0.5 md:py-1 rounded-full border border-cyan-400 text-sm md:text-base" style={{backgroundColor: "#1e293b"}}>4방울</span>
+                    <span className="text-cyan-400 px-2 md:px-3 py-0.5 md:py-1 rounded-full border border-cyan-400 text-sm md:text-base" style={{ backgroundColor: "#1e293b" }}>4방울</span>
                   </div>
                   <div className="text-xs md:text-sm text-slate-400 pl-9 md:pl-13">
                     현실 감각 4
@@ -561,7 +564,7 @@ function Screen3() {
                 <Sparkles className="w-6 h-6 md:w-10 md:h-10 text-teal-400" />
               </motion.div>
 
-              <div className="relative rounded-2xl p-3 md:p-5 shadow-lg border border-cyan-400 shadow-cyan-400" style={{backgroundColor: "#1e3a8a"}}>
+              <div className="relative rounded-2xl p-3 md:p-5 shadow-lg border border-cyan-400 shadow-cyan-400" style={{ backgroundColor: "#1e3a8a" }}>
                 <ImageWithFallback
                   src={perfumeAnimationGif}
                   alt="향수 제작 과정"
@@ -607,7 +610,7 @@ function Screen4() {
                 <Sparkles className="w-6 h-6 md:w-10 md:h-10 text-teal-400" />
               </motion.div>
 
-              <div className="relative rounded-2xl p-4 md:p-6 border border-cyan-400 shadow-lg shadow-cyan-400" style={{backgroundColor: "#1e3a8a"}}>
+              <div className="relative rounded-2xl p-4 md:p-6 border border-cyan-400 shadow-lg shadow-cyan-400" style={{ backgroundColor: "#1e3a8a" }}>
                 <ImageWithFallback
                   src={perfumeBottleImage}
                   alt="향수병과 로고"
@@ -630,24 +633,24 @@ function Screen4() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="inline-flex items-center gap-2 text-cyan-300 px-3 md:px-5 py-1.5 md:py-2 rounded-full mb-4 md:mb-6 border border-cyan-400 text-sm md:text-base" style={{backgroundColor: "#1e293b"}}
+              className="inline-flex items-center gap-2 text-cyan-300 px-3 md:px-5 py-1.5 md:py-2 rounded-full mb-4 md:mb-6 border border-cyan-400 text-sm md:text-base" style={{ backgroundColor: "#1e293b" }}
             >
-              <span className="w-5 h-5 md:w-8 md:h-8 text-indigo-900 rounded-full flex items-center justify-center text-xs md:text-sm" style={{backgroundColor: "#14b8a6"}}>3</span>
+              <span className="w-5 h-5 md:w-8 md:h-8 text-indigo-900 rounded-full flex items-center justify-center text-xs md:text-sm" style={{ backgroundColor: "#14b8a6" }}>3</span>
               <span>우주 베이스로 채우기</span>
             </motion.div>
 
             <h1 className="text-2xl md:text-4xl mb-3 md:mb-5 text-white">별빛의 순간을 완성하세요</h1>
 
             <p className="text-slate-300 text-sm md:text-lg mb-6 md:mb-8">
-              원액을 모두 넣었다면, 공병의 <strong className="text-cyan-400 px-2 py-1 rounded border border-cyan-400" style={{backgroundColor: "#1e293b"}}>로고의 윗부분까지</strong> 향수 베이스로 가득 채워주세요.
+              원액을 모두 넣었다면, 공병의 <strong className="text-cyan-400 px-2 py-1 rounded border border-cyan-400" style={{ backgroundColor: "#1e293b" }}>로고의 윗부분까지</strong> 향수 베이스로 가득 채워주세요.
             </p>
 
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="rounded-2xl p-4 md:p-6 border border-cyan-400 shadow-lg shadow-cyan-400" style={{backgroundColor: "#1e3a8a"}}
+              className="rounded-2xl p-4 md:p-6 border border-cyan-400 shadow-lg shadow-cyan-400" style={{ backgroundColor: "#1e3a8a" }}
             >
               <div className="flex items-start gap-2 md:gap-3">
-                <div className="w-7 h-7 md:w-10 md:h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{backgroundColor: "#14b8a6"}}>
+                <div className="w-7 h-7 md:w-10 md:h-10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5" style={{ backgroundColor: "#14b8a6" }}>
                   <Sparkles className="w-3.5 h-3.5 md:w-6 md:h-6 text-indigo-900" />
                 </div>
                 <div>
@@ -678,9 +681,9 @@ function Screen5() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="inline-flex items-center gap-2 text-cyan-300 px-3 md:px-5 py-1.5 md:py-2 rounded-full mb-4 md:mb-6 border border-cyan-400 text-sm md:text-base" style={{backgroundColor: "#1e293b"}}
+          className="inline-flex items-center gap-2 text-cyan-300 px-3 md:px-5 py-1.5 md:py-2 rounded-full mb-4 md:mb-6 border border-cyan-400 text-sm md:text-base" style={{ backgroundColor: "#1e293b" }}
         >
-          <span className="w-5 h-5 md:w-8 md:h-8 text-indigo-900 rounded-full flex items-center justify-center text-xs md:text-sm" style={{backgroundColor: "#14b8a6"}}>4</span>
+          <span className="w-5 h-5 md:w-8 md:h-8 text-indigo-900 rounded-full flex items-center justify-center text-xs md:text-sm" style={{ backgroundColor: "#14b8a6" }}>4</span>
           <span>별자리 완성 및 숙성</span>
         </motion.div>
 
@@ -694,7 +697,7 @@ function Screen5() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
             whileHover={{ scale: 1.05 }}
-            className="rounded-2xl p-5 md:p-8 text-center border border-cyan-400 shadow-lg shadow-cyan-400" style={{backgroundColor: "#1e3a8a"}}
+            className="rounded-2xl p-5 md:p-8 text-center border border-cyan-400 shadow-lg shadow-cyan-400" style={{ backgroundColor: "#1e3a8a" }}
           >
             <motion.div
               animate={{ rotate: [-5, 5, -5] }}
@@ -713,14 +716,14 @@ function Screen5() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
             whileHover={{ scale: 1.05 }}
-            className="rounded-2xl p-5 md:p-8 text-center border border-cyan-400 shadow-lg shadow-cyan-400" style={{backgroundColor: "#1e3a8a"}}
+            className="rounded-2xl p-5 md:p-8 text-center border border-cyan-400 shadow-lg shadow-cyan-400" style={{ backgroundColor: "#1e3a8a" }}
           >
             <div className="w-14 h-14 md:w-24 md:h-24 bg-cyan-400 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-5 relative border border-cyan-400">
               <Shield className="w-7 h-7 md:w-12 md:h-12 text-cyan-300" />
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="absolute -top-0.5 md:-top-1 -right-0.5 md:-right-1 w-3 h-3 md:w-5 md:h-5 rounded-full flex items-center justify-center" style={{backgroundColor: "#14b8a6"}}
+                className="absolute -top-0.5 md:-top-1 -right-0.5 md:-right-1 w-3 h-3 md:w-5 md:h-5 rounded-full flex items-center justify-center" style={{ backgroundColor: "#14b8a6" }}
               >
                 <Star className="w-1.5 h-1.5 md:w-2.5 md:h-2.5 text-indigo-900" />
               </motion.div>
@@ -736,10 +739,10 @@ function Screen5() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1, duration: 0.8 }}
           whileHover={{ scale: 1.02 }}
-          className="border border-cyan-400 rounded-2xl p-4 md:p-6 shadow-lg shadow-cyan-400" style={{backgroundColor: "#1e3a8a"}}
+          className="border border-cyan-400 rounded-2xl p-4 md:p-6 shadow-lg shadow-cyan-400" style={{ backgroundColor: "#1e3a8a" }}
         >
           <div className="flex items-start gap-2 md:gap-3">
-            <div className="w-7 h-7 md:w-10 md:h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: "#14b8a6"}}>
+            <div className="w-7 h-7 md:w-10 md:h-10 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "#14b8a6" }}>
               <Lightbulb className="w-3.5 h-3.5 md:w-6 md:h-6 text-indigo-900" />
             </div>
             <div className="text-left">
@@ -806,13 +809,13 @@ function Screen6() {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.5, duration: 0.8, type: 'spring' }}
-          className="w-28 h-28 md:w-48 md:h-48 mx-auto rounded-full flex items-center justify-center mb-6 md:mb-10 relative shadow-2xl border-2 md:border-4 border-cyan-400" style={{backgroundColor: "#1e40af"}}
+          className="w-28 h-28 md:w-48 md:h-48 mx-auto rounded-full flex items-center justify-center mb-6 md:mb-10 relative shadow-2xl border-2 md:border-4 border-cyan-400" style={{ backgroundColor: "#1e40af" }}
         >
           <Check className="w-12 h-12 md:w-20 md:h-20 text-cyan-300" />
           <motion.div
             animate={{ rotate: 360, scale: [1, 1.2, 1] }}
             transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
-            className="absolute -top-4 md:-top-6 -right-4 md:-right-6 w-11 h-11 md:w-18 md:h-18 rounded-full flex items-center justify-center border border-cyan-300" style={{backgroundColor: "#14b8a6"}}
+            className="absolute -top-4 md:-top-6 -right-4 md:-right-6 w-11 h-11 md:w-18 md:h-18 rounded-full flex items-center justify-center border border-cyan-300" style={{ backgroundColor: "#14b8a6" }}
           >
             <Star className="w-6 h-6 md:w-10 md:h-10 text-indigo-900" />
           </motion.div>
@@ -860,7 +863,7 @@ function Screen6() {
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-            className="w-8 h-8 md:w-14 md:h-14 rounded-full flex items-center justify-center border border-cyan-300" style={{backgroundColor: "#14b8a6"}}
+            className="w-8 h-8 md:w-14 md:h-14 rounded-full flex items-center justify-center border border-cyan-300" style={{ backgroundColor: "#14b8a6" }}
           >
             <Star className="w-4 h-4 md:w-7 md:h-7 text-indigo-900" />
           </motion.div>
