@@ -128,7 +128,7 @@ export default function App() {
       {/* Progress bar - 별자리 스타일 */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-slate-800 z-20">
         <motion.div
-          className="h-full bg-gradient-to-r from-cyan-400 via-teal-300 to-cyan-500 relative"
+          className="h-full bg-slate-800 relative"
           initial={{ width: 0 }}
           animate={{ width: `${((currentScreen + 1) / TOTAL_SCREENS) * 100}%` }}
           transition={{ duration: 0.3 }}
@@ -201,7 +201,7 @@ function Screen1({ onNext }: { onNext: () => void }) {
           transition={{ delay: 0.5, duration: 0.8 }}
           className="mb-6 md:mb-10"
         >
-          <div className="w-28 h-28 md:w-48 md:h-48 mx-auto bg-gradient-to-r from-indigo-800 to-blue-700 rounded-full flex items-center justify-center mb-4 md:mb-6 relative shadow-2xl border-2 md:border-4 border-cyan-400">
+          <div className="w-28 h-28 md:w-48 md:h-48 mx-auto bg-slate-800 rounded-full flex items-center justify-center mb-4 md:mb-6 relative shadow-2xl border-2 md:border-4 border-cyan-400">
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
@@ -213,21 +213,21 @@ function Screen1({ onNext }: { onNext: () => void }) {
             <motion.div
               animate={{ rotate: 360, scale: [1, 1.2, 1] }}
               transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-              className="absolute -top-2 md:-top-4 -right-2 md:-right-4 w-8 h-8 md:w-14 md:h-14 bg-gradient-to-r from-cyan-400 to-teal-300 rounded-full flex items-center justify-center"
+              className="absolute -top-2 md:-top-4 -right-2 md:-right-4 w-8 h-8 md:w-14 md:h-14 bg-slate-800 rounded-full flex items-center justify-center"
             >
               <Star className="w-4 h-4 md:w-7 md:h-7 text-indigo-900" />
             </motion.div>
             <motion.div
               animate={{ rotate: -360, scale: [1, 1.1, 1] }}
               transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
-              className="absolute -bottom-1.5 md:-bottom-3 -left-1.5 md:-left-3 w-7 h-7 md:w-12 md:h-12 bg-gradient-to-r from-teal-400 to-cyan-300 rounded-full flex items-center justify-center"
+              className="absolute -bottom-1.5 md:-bottom-3 -left-1.5 md:-left-3 w-7 h-7 md:w-12 md:h-12 bg-slate-800 rounded-full flex items-center justify-center"
             >
               <Heart className="w-3.5 h-3.5 md:w-6 md:h-6 text-indigo-900" />
             </motion.div>
             <motion.div
               animate={{ rotate: 180, scale: [1, 1.15, 1] }}
               transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
-              className="absolute -top-0.5 md:-top-2 -left-3 md:-left-6 w-5 h-5 md:w-9 md:h-9 bg-gradient-to-r from-cyan-300 to-teal-400 rounded-full flex items-center justify-center"
+              className="absolute -top-0.5 md:-top-2 -left-3 md:-left-6 w-5 h-5 md:w-9 md:h-9 bg-slate-800 rounded-full flex items-center justify-center"
             >
               <Star className="w-2.5 h-2.5 md:w-4 md:h-4 text-indigo-900" />
             </motion.div>
@@ -235,7 +235,7 @@ function Screen1({ onNext }: { onNext: () => void }) {
         </motion.div>
 
         <motion.h1
-          className="text-2xl md:text-5xl mb-4 md:mb-6 text-white bg-gradient-to-r from-cyan-300 via-teal-200 to-cyan-400 bg-clip-text text-transparent"
+          className="text-2xl md:text-5xl mb-4 md:mb-6 text-white bg-slate-800 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.8 }}
@@ -260,7 +260,7 @@ function Screen1({ onNext }: { onNext: () => void }) {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={onNext}
-          className="bg-gradient-to-r from-cyan-400 to-teal-500 hover:from-cyan-300 hover:to-teal-400 text-indigo-900 px-8 md:px-12 py-3 md:py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-cyan-400 border border-cyan-300 text-base md:text-lg"
+          className="bg-slate-800 hover:from-cyan-300 hover:to-teal-400 text-indigo-900 px-8 md:px-12 py-3 md:py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-cyan-400 border border-cyan-300 text-base md:text-lg"
         >
           별자리 여행 시작하기
         </motion.button>
@@ -302,7 +302,7 @@ function Screen2() {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="inline-flex items-center gap-2 bg-slate-800 text-cyan-300 px-3 md:px-5 py-1.5 md:py-2 rounded-full mb-4 md:mb-6 border border-cyan-400 text-sm md:text-base"
         >
-          <span className="w-5 h-5 md:w-8 md:h-8 bg-gradient-to-r from-cyan-400 to-teal-500 text-indigo-900 rounded-full flex items-center justify-center text-xs md:text-sm">1</span>
+          <span className="w-5 h-5 md:w-8 md:h-8 bg-slate-800 text-indigo-900 rounded-full flex items-center justify-center text-xs md:text-sm">1</span>
           <span>나만의 별자리 확인하기</span>
         </motion.div>
 
@@ -338,7 +338,7 @@ function Screen2() {
             </motion.div>
 
             <h3 className="font-medium text-cyan-300 mb-3 md:mb-4 text-center text-base md:text-xl">매력 점수</h3>
-            <div className="p-3 md:p-5 bg-gradient-to-br from-slate-800 to-blue-900 rounded-2xl border border-cyan-400 shadow-lg shadow-cyan-400">
+            <div className="p-3 md:p-5 bg-slate-800 rounded-2xl border border-cyan-400 shadow-lg shadow-cyan-400">
               <ImageWithFallback
                 src={attractionDataImage}
                 alt="매력 점수 데이터"
@@ -373,7 +373,7 @@ function Screen3() {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="inline-flex items-center gap-2 bg-slate-800 text-cyan-300 px-3 md:px-5 py-1.5 md:py-2 rounded-full mb-4 md:mb-6 border border-cyan-400 text-sm md:text-base"
             >
-              <span className="w-5 h-5 md:w-8 md:h-8 bg-gradient-to-r from-cyan-400 to-teal-500 text-indigo-900 rounded-full flex items-center justify-center text-xs md:text-sm">2</span>
+              <span className="w-5 h-5 md:w-8 md:h-8 bg-slate-800 text-indigo-900 rounded-full flex items-center justify-center text-xs md:text-sm">2</span>
               <span>'별빛'으로 원액 조합하기</span>
             </motion.div>
 
@@ -385,7 +385,7 @@ function Screen3() {
             </p>
 
             {/* Recipe example - 반응형 */}
-            <div className="bg-gradient-to-br from-slate-800 to-blue-900 rounded-2xl p-4 md:p-6 border border-cyan-400 shadow-lg shadow-cyan-400">
+            <div className="bg-slate-800 rounded-2xl p-4 md:p-6 border border-cyan-400 shadow-lg shadow-cyan-400">
               <h3 className="mb-3 md:mb-5 text-cyan-300 text-base md:text-xl">별자리 레시피:</h3>
               <div className="space-y-3 md:space-y-4">
                 {/* 도덕성 및 양심 카테고리 */}
@@ -472,7 +472,7 @@ function Screen3() {
                 <Sparkles className="w-6 h-6 md:w-10 md:h-10 text-teal-400" />
               </motion.div>
 
-              <div className="relative bg-gradient-to-br from-slate-800 to-blue-900 rounded-2xl p-3 md:p-5 shadow-lg border border-cyan-400 shadow-cyan-400">
+              <div className="relative bg-slate-800 rounded-2xl p-3 md:p-5 shadow-lg border border-cyan-400 shadow-cyan-400">
                 <ImageWithFallback
                   src={perfumeAnimationGif}
                   alt="향수 제작 과정"
@@ -518,7 +518,7 @@ function Screen4() {
                 <Sparkles className="w-6 h-6 md:w-10 md:h-10 text-teal-400" />
               </motion.div>
 
-              <div className="relative bg-gradient-to-br from-slate-800 to-blue-900 rounded-2xl p-4 md:p-6 border border-cyan-400 shadow-lg shadow-cyan-400">
+              <div className="relative bg-slate-800 rounded-2xl p-4 md:p-6 border border-cyan-400 shadow-lg shadow-cyan-400">
                 <ImageWithFallback
                   src={perfumeBottleImage}
                   alt="향수병과 로고"
@@ -543,7 +543,7 @@ function Screen4() {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="inline-flex items-center gap-2 bg-slate-800 text-cyan-300 px-3 md:px-5 py-1.5 md:py-2 rounded-full mb-4 md:mb-6 border border-cyan-400 text-sm md:text-base"
             >
-              <span className="w-5 h-5 md:w-8 md:h-8 bg-gradient-to-r from-cyan-400 to-teal-500 text-indigo-900 rounded-full flex items-center justify-center text-xs md:text-sm">3</span>
+              <span className="w-5 h-5 md:w-8 md:h-8 bg-slate-800 text-indigo-900 rounded-full flex items-center justify-center text-xs md:text-sm">3</span>
               <span>우주 베이스로 채우기</span>
             </motion.div>
 
@@ -555,10 +555,10 @@ function Screen4() {
 
             <motion.div
               whileHover={{ scale: 1.02 }}
-              className="bg-gradient-to-br from-slate-800 to-blue-900 rounded-2xl p-4 md:p-6 border border-cyan-400 shadow-lg shadow-cyan-400"
+              className="bg-slate-800 rounded-2xl p-4 md:p-6 border border-cyan-400 shadow-lg shadow-cyan-400"
             >
               <div className="flex items-start gap-2 md:gap-3">
-                <div className="w-7 h-7 md:w-10 md:h-10 bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div className="w-7 h-7 md:w-10 md:h-10 bg-slate-800 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Sparkles className="w-3.5 h-3.5 md:w-6 md:h-6 text-indigo-900" />
                 </div>
                 <div>
@@ -591,7 +591,7 @@ function Screen5() {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="inline-flex items-center gap-2 bg-slate-800 text-cyan-300 px-3 md:px-5 py-1.5 md:py-2 rounded-full mb-4 md:mb-6 border border-cyan-400 text-sm md:text-base"
         >
-          <span className="w-5 h-5 md:w-8 md:h-8 bg-gradient-to-r from-cyan-400 to-teal-500 text-indigo-900 rounded-full flex items-center justify-center text-xs md:text-sm">4</span>
+          <span className="w-5 h-5 md:w-8 md:h-8 bg-slate-800 text-indigo-900 rounded-full flex items-center justify-center text-xs md:text-sm">4</span>
           <span>별자리 완성 및 숙성</span>
         </motion.div>
 
@@ -605,12 +605,12 @@ function Screen5() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
             whileHover={{ scale: 1.05 }}
-            className="bg-gradient-to-br from-slate-800 to-blue-900 rounded-2xl p-5 md:p-8 text-center border border-cyan-400 shadow-lg shadow-cyan-400"
+            className="bg-slate-800 rounded-2xl p-5 md:p-8 text-center border border-cyan-400 shadow-lg shadow-cyan-400"
           >
             <motion.div
               animate={{ rotate: [-5, 5, -5] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-14 h-14 md:w-24 md:h-24 bg-gradient-to-r from-teal-500 to-cyan-400 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-5 border border-cyan-400"
+              className="w-14 h-14 md:w-24 md:h-24 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-5 border border-cyan-400"
             >
               <Music className="w-7 h-7 md:w-12 md:h-12 text-cyan-300" />
             </motion.div>
@@ -624,14 +624,14 @@ function Screen5() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
             whileHover={{ scale: 1.05 }}
-            className="bg-gradient-to-br from-slate-800 to-blue-900 rounded-2xl p-5 md:p-8 text-center border border-cyan-400 shadow-lg shadow-cyan-400"
+            className="bg-slate-800 rounded-2xl p-5 md:p-8 text-center border border-cyan-400 shadow-lg shadow-cyan-400"
           >
-            <div className="w-14 h-14 md:w-24 md:h-24 bg-gradient-to-r from-teal-500 to-cyan-400 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-5 relative border border-cyan-400">
+            <div className="w-14 h-14 md:w-24 md:h-24 bg-slate-800 rounded-full flex items-center justify-center mx-auto mb-3 md:mb-5 relative border border-cyan-400">
               <Shield className="w-7 h-7 md:w-12 md:h-12 text-cyan-300" />
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="absolute -top-0.5 md:-top-1 -right-0.5 md:-right-1 w-3 h-3 md:w-5 md:h-5 bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full flex items-center justify-center"
+                className="absolute -top-0.5 md:-top-1 -right-0.5 md:-right-1 w-3 h-3 md:w-5 md:h-5 bg-slate-800 rounded-full flex items-center justify-center"
               >
                 <Star className="w-1.5 h-1.5 md:w-2.5 md:h-2.5 text-indigo-900" />
               </motion.div>
@@ -647,10 +647,10 @@ function Screen5() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1, duration: 0.8 }}
           whileHover={{ scale: 1.02 }}
-          className="bg-gradient-to-br from-slate-800 to-blue-900 border border-cyan-400 rounded-2xl p-4 md:p-6 shadow-lg shadow-cyan-400"
+          className="bg-slate-800 border border-cyan-400 rounded-2xl p-4 md:p-6 shadow-lg shadow-cyan-400"
         >
           <div className="flex items-start gap-2 md:gap-3">
-            <div className="w-7 h-7 md:w-10 md:h-10 bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full flex items-center justify-center flex-shrink-0">
+            <div className="w-7 h-7 md:w-10 md:h-10 bg-slate-800 rounded-full flex items-center justify-center flex-shrink-0">
               <Lightbulb className="w-3.5 h-3.5 md:w-6 md:h-6 text-indigo-900" />
             </div>
             <div className="text-left">
@@ -717,34 +717,34 @@ function Screen6() {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ delay: 0.5, duration: 0.8, type: 'spring' }}
-          className="w-28 h-28 md:w-48 md:h-48 mx-auto bg-gradient-to-r from-indigo-800 to-blue-700 rounded-full flex items-center justify-center mb-6 md:mb-10 relative shadow-2xl border-2 md:border-4 border-cyan-400"
+          className="w-28 h-28 md:w-48 md:h-48 mx-auto bg-slate-800 rounded-full flex items-center justify-center mb-6 md:mb-10 relative shadow-2xl border-2 md:border-4 border-cyan-400"
         >
           <Check className="w-12 h-12 md:w-20 md:h-20 text-cyan-300" />
           <motion.div
             animate={{ rotate: 360, scale: [1, 1.2, 1] }}
             transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
-            className="absolute -top-4 md:-top-6 -right-4 md:-right-6 w-11 h-11 md:w-18 md:h-18 bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full flex items-center justify-center border border-cyan-300"
+            className="absolute -top-4 md:-top-6 -right-4 md:-right-6 w-11 h-11 md:w-18 md:h-18 bg-slate-800 rounded-full flex items-center justify-center border border-cyan-300"
           >
             <Star className="w-6 h-6 md:w-10 md:h-10 text-indigo-900" />
           </motion.div>
           <motion.div
             animate={{ rotate: -360, scale: [1, 1.1, 1] }}
             transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
-            className="absolute -bottom-3 md:-bottom-5 -left-3 md:-left-5 w-8 h-8 md:w-14 md:h-14 bg-gradient-to-r from-teal-400 to-cyan-300 rounded-full flex items-center justify-center border border-cyan-300"
+            className="absolute -bottom-3 md:-bottom-5 -left-3 md:-left-5 w-8 h-8 md:w-14 md:h-14 bg-slate-800 rounded-full flex items-center justify-center border border-cyan-300"
           >
             <Heart className="w-4 h-4 md:w-7 md:h-7 text-indigo-900" />
           </motion.div>
           <motion.div
             animate={{ rotate: 180, scale: [1, 1.15, 1] }}
             transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-            className="absolute -top-1.5 md:-top-3 -left-5 md:-left-8 w-7 h-7 md:w-12 md:h-12 bg-gradient-to-r from-cyan-300 to-teal-400 rounded-full flex items-center justify-center border border-cyan-300"
+            className="absolute -top-1.5 md:-top-3 -left-5 md:-left-8 w-7 h-7 md:w-12 md:h-12 bg-slate-800 rounded-full flex items-center justify-center border border-cyan-300"
           >
             <Sparkles className="w-3.5 h-3.5 md:w-6 md:h-6 text-indigo-900" />
           </motion.div>
         </motion.div>
 
         <motion.h1
-          className="text-xl md:text-4xl mb-4 md:mb-6 text-white bg-gradient-to-r from-cyan-300 via-teal-200 to-cyan-400 bg-clip-text text-transparent px-2"
+          className="text-xl md:text-4xl mb-4 md:mb-6 text-white bg-slate-800 bg-clip-text text-transparent px-2"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.7, duration: 0.8 }}
@@ -771,7 +771,7 @@ function Screen6() {
           <motion.div
             animate={{ rotate: 360 }}
             transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-            className="w-8 h-8 md:w-14 md:h-14 bg-gradient-to-r from-cyan-400 to-teal-500 rounded-full flex items-center justify-center border border-cyan-300"
+            className="w-8 h-8 md:w-14 md:h-14 bg-slate-800 rounded-full flex items-center justify-center border border-cyan-300"
           >
             <Star className="w-4 h-4 md:w-7 md:h-7 text-indigo-900" />
           </motion.div>
@@ -784,7 +784,7 @@ function Screen6() {
           <motion.div
             animate={{ rotate: -360 }}
             transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-            className="w-8 h-8 md:w-14 md:h-14 bg-gradient-to-r from-teal-400 to-cyan-300 rounded-full flex items-center justify-center border border-cyan-300"
+            className="w-8 h-8 md:w-14 md:h-14 bg-slate-800 rounded-full flex items-center justify-center border border-cyan-300"
           >
             <Sparkles className="w-4 h-4 md:w-7 md:h-7 text-indigo-900" />
           </motion.div>
