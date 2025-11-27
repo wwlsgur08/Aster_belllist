@@ -814,6 +814,30 @@ function Screen6() {
           </motion.div>
         </motion.div>
 
+        {/* 창 닫기 안내 및 버튼 */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.5, duration: 0.8 }}
+          className="mt-8 md:mt-12"
+        >
+          <p className="mb-4 text-sm md:text-base" style={{ color: "#cbd5e1" }}>
+            향수를 만든 뒤에는 이 버튼을 눌러 창을 꼭 닫아주세요
+          </p>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => window.close()}
+            className="px-8 md:px-12 py-3 md:py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-cyan-400/25 border text-base md:text-lg"
+            style={{
+              borderColor: "#67e8f9",
+              color: "#312e81",
+              background: "linear-gradient(to right, #22d3ee, #14b8a6)"
+            }}
+          >
+            창 닫기
+          </motion.button>
+        </motion.div>
 
       </motion.div>
     </div>
