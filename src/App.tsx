@@ -9,6 +9,73 @@ import asterLogoImage from 'figma:asset/49cfaaaba870f96430af036f6c2b8cb2b4639530
 
 const TOTAL_SCREENS = 6;
 
+// 별자리 연결선 SVG 컴포넌트
+const ConstellationLines = () => (
+  <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 1000 800">
+    <defs>
+      <linearGradient id="starGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#06b6d4" />
+        <stop offset="100%" stopColor="#67e8f9" />
+      </linearGradient>
+    </defs>
+
+    {/* 별자리 연결선들 */}
+    <motion.path
+      d="M100,100 L200,150 L300,120 L400,180 L500,140"
+      stroke="url(#starGradient)"
+      strokeWidth="1"
+      fill="none"
+      initial={{ pathLength: 0, opacity: 0 }}
+      animate={{ pathLength: 1, opacity: 0.6 }}
+      transition={{ duration: 3, delay: 0.5 }}
+    />
+    <motion.path
+      d="M600,200 L700,250 L800,220 L900,280"
+      stroke="url(#starGradient)"
+      strokeWidth="1"
+      fill="none"
+      initial={{ pathLength: 0, opacity: 0 }}
+      animate={{ pathLength: 1, opacity: 0.6 }}
+      transition={{ duration: 3, delay: 1 }}
+    />
+    <motion.path
+      d="M150,400 L250,450 L350,420 L450,480 L550,440"
+      stroke="url(#starGradient)"
+      strokeWidth="1"
+      fill="none"
+      initial={{ pathLength: 0, opacity: 0 }}
+      animate={{ pathLength: 1, opacity: 0.6 }}
+      transition={{ duration: 3, delay: 1.5 }}
+    />
+
+    {/* 별들 */}
+    {[
+      { x: 100, y: 100 }, { x: 200, y: 150 }, { x: 300, y: 120 }, { x: 400, y: 180 }, { x: 500, y: 140 },
+      { x: 600, y: 200 }, { x: 700, y: 250 }, { x: 800, y: 220 }, { x: 900, y: 280 },
+      { x: 150, y: 400 }, { x: 250, y: 450 }, { x: 350, y: 420 }, { x: 450, y: 480 }, { x: 550, y: 440 }
+    ].map((star, index) => (
+      <motion.circle
+        key={index}
+        cx={star.x}
+        cy={star.y}
+        r="2"
+        fill="url(#starGradient)"
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{
+          scale: [0, 1.2, 1, 1.5, 1],
+          opacity: [0, 1, 0.7, 1, 0.8]
+        }}
+        transition={{
+          duration: 2,
+          delay: 0.5 + index * 0.1,
+          repeat: Infinity,
+          repeatDelay: 3 + index * 0.2
+        }}
+      />
+    ))}
+  </svg>
+);
+
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -66,14 +133,36 @@ export default function App() {
 
   return (
     <div
-      className="w-full h-screen overflow-hidden relative"
-      style={{
-        background: 'linear-gradient(to bottom, #0f172a, #1e3a8a, #312e81)'
-      }}
+      className="w-full h-screen overflow-hidden bg-indigo-900 relative"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
     >
+      {/* 배경 별자리 */}
+      <ConstellationLines />
+
+      {/* 배경 별들 */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {Array.from({ length: 50 }).map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-cyan-300 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              opacity: [0.3, 1, 0.3],
+              scale: [0.5, 1.2, 0.5]
+            }}
+            transition={{
+              duration: 2 + Math.random() * 3,
+              repeat: Infinity,
+              delay: Math.random() * 2
+            }}
+          />
+        ))}
+      </div>
 
       {/* Screen Content */}
       <motion.div
