@@ -98,7 +98,7 @@ export default function App() {
       {/* Navigation - 반응형 */}
       <div className="absolute right-3 md:right-6 top-1/2 transform -translate-y-1/2 flex flex-col items-center gap-3 md:gap-4 z-20">
         {/* Swipe Instruction - Boxed next to dots */}
-        <div className="absolute right-full top-1/2 -translate-y-1/2 mr-12 md:mr-16 pointer-events-none w-max" style={{ right: 'calc(100% + 20px)' }}>
+        <div className="hidden md:block absolute right-full top-1/2 -translate-y-1/2 mr-12 md:mr-16 pointer-events-none w-max" style={{ right: 'calc(100% + 20px)' }}>
           <div className="px-8 py-3 rounded-xl border backdrop-blur-sm"
             style={{ backgroundColor: "rgba(15, 23, 42, 0.6)", borderColor: "rgba(34, 211, 238, 0.3)", minWidth: "220px", width: "220px" }}>
             <p className="text-[10px] md:text-xs opacity-90 leading-relaxed text-center font-medium"
